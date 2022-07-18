@@ -1,0 +1,20 @@
+.trackerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: space-between;
+
+  font-weight: bold;
+  margin-top: 20px;
+  gap: 30px;
+  border: 1px solid black;
+  padding: 10px;
+
+  &__button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+}
