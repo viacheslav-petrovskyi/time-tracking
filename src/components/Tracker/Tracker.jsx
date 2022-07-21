@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TrackerList } from '../TrackerList';
+import { TrackerItem } from '../TrackerItem';
 import './Tracker.scss';
 
 export const Tracker = () => {
@@ -11,7 +11,7 @@ export const Tracker = () => {
 
     const newTracker = {
       id: Date.now(),
-      name: !nameTracker
+      name: !nameTracker.trim()
         ? `${new Date().toDateString()}`
         : nameTracker,
     };
@@ -38,11 +38,14 @@ export const Tracker = () => {
           play_arrow
         </button>
       </form>
-      <div>
-        {trackerList.map(tracker => (
-          <TrackerList id={tracker.id} name={tracker.name} />
-        ))}
-      </div>
+      {trackerList.map(tracker => (
+        <div key={tracker.id}>
+          <TrackerItem
+            id={tracker.id}
+            name={tracker.name}
+          />
+        </div>
+      ))}
     </div>
   );
 };
